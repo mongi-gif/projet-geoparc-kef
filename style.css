@@ -1,360 +1,168 @@
-/* =====================================================
-   PROJET GEOPARC DU KEF
-   Version 1.0
-===================================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+html { scroll-behavior: smooth; }
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+    color: #1f2937;
 }
 
-html{
-    scroll-behavior:smooth;
+/* Barre de navigation */
+header {
+    background-color: #004d26;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+nav {
+    display: flex;
+    gap: 25px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav a:hover { color: #ffcc00; }
+.btn-action {
+    background-color: #ffcc00;
+    color: #111827;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+}
+.btn-action:hover { background-color: #f59e0b; }
+
+/* Contenu Principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 20px;
+}
+.intro-section {
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto 48px auto;
+}
+.intro-section p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+.intro-section h2 {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    font-weight: 600;
 }
 
-body{
+/* Grille des 3 Blocs */
+.grid-blocs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-bottom: 64px;
+}
+.card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.card .icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+.card h3 { font-size: 1.25rem; color: #111827; margin: 0 0 8px 0; font-weight: bold; }
+.card p { font-size: 0.875rem; color: #6b7280; margin: 0; line-height: 1.5; }
 
-    font-family:Arial, Helvetica, sans-serif;
+/* Section Carte */
+.map-section {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    margin-bottom: 64px;
+}
+.map-section h2 { font-size: 1.5rem; color: #111827; margin: 0 0 24px 0; display: flex; align-items: center; gap: 8px; }
 
-    background:#f5f5f5;
-
-    color:#333;
-    padding-top:80px;
-
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
 }
 
-/* ===========================
-   NAVBAR
-=========================== */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:9999;
+/* Style intérieur des fiches info (Popups) au survol */
+.custom-popup-content {
+    max-width: 220px;
+}
+.custom-popup-content img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 8px;
+    display: block;
+}
+.custom-popup-content h3 {
+    margin: 0 0 4px 0;
+    color: #004d26;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.custom-popup-content p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
-.navbar{
-    background:#0b5d3b;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 25px;
-    flex-wrap:wrap;
+/* Autres rubriques */
+.content-section {
+    padding: 48px 0;
+    border-top: 1px solid #e5e7eb;
 }
+.content-section h2 { font-size: 1.5rem; color: #111827; margin: 0 0 16px 0; }
+.content-section p { color: #4b5563; line-height: 1.5; }
 
-.logo{
-
-    font-size:24px;
-
-    font-weight:bold;
-
+/* Pied de page */
+footer {
+    background-color: #004d26;
+    color: white;
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 48px;
+    border-top: 4px solid #ffcc00;
 }
-
-.menu{
-
-    list-style:none;
-
-    display:flex;
-
-    gap:20px;
-
-}
-
-.menu a{
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:0.3s;
-
-}
-
-.menu a:hover{
-
-    color:#ffd54f;
-
-}
-
-.btn-explorer{
-
-    background:#ffc107;
-
-    color:#000;
-
-    padding:10px 18px;
-
-    border-radius:5px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-}
-
-.btn-explorer:hover{
-
-    background:#ff9800;
-
-}
-
-/* ===========================
-   HERO
-=========================== */
-
-.hero{
-
-    background:linear-gradient(rgba(0,0,0,.45),
-                               rgba(0,0,0,.45)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop");
-
-    background-size:cover;
-
-    background-position:center;
-
-    height:45vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    color:white;
-
-}
-
-.overlay{
-
-    max-width:900px;
-
-    padding:20px;
-
-}
-
-.hero h1{
-
-    font-size:42px;
-
-    margin-bottom:15px;
-
-}
-
-.hero p{
-
-    font-size:20px;
-
-    margin-bottom:25px;
-
-    line-height:1.6;
-
-}
-
-.hero-button{
-
-    display:inline-block;
-
-    background:#ffc107;
-
-    color:black;
-
-    text-decoration:none;
-
-    padding:14px 25px;
-
-    border-radius:6px;
-
-    font-weight:bold;
-
-}
-
-.hero-button:hover{
-
-    background:#ff9800;
-
-}
-
-/* ===========================
-   PRESENTATION
-=========================== */
-
-.presentation{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:50px 20px;
-
-}
-
-.presentation h2{
-
-    text-align:center;
-
-    margin-bottom:20px;
-
-}
-
-.presentation p{
-
-    text-align:center;
-
-    line-height:1.7;
-
-    margin-bottom:20px;
-
-}
-
-/* ===========================
-   CARDS
-=========================== */
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-
-    margin-top:30px;
-
-}
-
-.card{
-
-    background:white;
-
-    border-radius:10px;
-
-    padding:25px;
-
-    text-align:center;
-
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
-
-}
-
-.card h3{
-
-    margin:15px 0;
-
-}
-
-/* ===========================
-   CARTE
-=========================== */
-
-.titre-carte{
-
-    text-align:center;
-
-    margin:30px 0;
-
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-    background:#0b5d3b;
-
-    color:white;
-
-    text-align:center;
-
-    padding:25px;
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:900px){
-
-.menu{
-
-    width:100%;
-
-    justify-content:center;
-
-    margin-top:15px;
-
-    flex-wrap:wrap;
-
-}
-
-.btn-explorer{
-
-    margin-top:15px;
-
-}
-
-.hero h1{
-
-    font-size:30px;
-
-}
-
-.hero p{
-
-    font-size:17px;
-
-}
-
-@media(max-width:600px){
-
-.navbar{
-
-    flex-direction:column;
-
-}
-
-.logo{
-
-    margin-bottom:15px;
-
-}
-
-.hero{
-
-    height:35vh;
-
-}
-
-.hero h1{
-
-    font-size:25px;
-
-}
-
-.hero p{
-
-    font-size:15px;
-
-}
-
-
- #map{
-    width:100%;
-    height:calc(100vh - 80px);
-    min-height:500px;
-    position:relative;
-    z-index:1;
-}
-
-}
-
-}
+footer p { margin: 0; font-weight: 500; }
+footer .subtitle { color: #9ca3af; font-size: 0.75rem; margin-top: 8px; }
