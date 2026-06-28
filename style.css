@@ -28,31 +28,21 @@ body{
 =========================== */
 
 header{
-
-    position:sticky;
-
+    position:fixed;
     top:0;
-
-    z-index:1000;
-
+    left:0;
+    width:100%;
+    z-index:9999;
 }
 
 .navbar{
-
     background:#0b5d3b;
-
     color:white;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
-    padding:15px 30px;
-
+    padding:12px 25px;
     flex-wrap:wrap;
-
 }
 
 .logo{
