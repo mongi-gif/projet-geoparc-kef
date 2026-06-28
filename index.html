@@ -1,271 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Projet Géoparc du Kef</title>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Géoparc du Kef</title>
+    
+    <!-- Bibliothèque Leaflet obligatoire -->
+    <link rel="stylesheet" href="https://unpkg.com" />
+    <script src="https://unpkg.com"></script>
+    
+    <!-- Liaison du fichier de style externe -->
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
-
-<h1>Projet Géoparc du Kef</h1>
-
-<p>
-Vers un UNESCO Global Geopark
-</p>
-
-</header>
-
-<div id="map"></div>
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Projet Géoparc du Kef | Vers un UNESCO Global Geopark</title>
-
-<meta name="description" content="Portail officiel du Projet Géoparc du Kef - Géologie, patrimoine naturel, patrimoine minier, tourisme durable et géosites.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-
-<header>
-
-<nav class="navbar">
-
-<div class="logo">
-
-🌍 <span>Projet Géoparc du Kef</span>
-
-</div>
-
-<ul class="menu">
-
-<li><a href="#">Accueil</a></li>
-
-<li><a href="#presentation">Présentation</a></li>
-
-<li><a href="#map-section">Carte</a></li>
-
-<li><a href="#">Géosites</a></li>
-
-<li><a href="#">Galerie</a></li>
-
-<li><a href="#">Bibliographie</a></li>
-
-<li><a href="#">Contact</a></li>
-
-</ul>
-
-<a href="#map-section" class="btn-explorer">
-
-Explorer la carte
-
-</a>
-
-</nav>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<div class="overlay">
-
-<h1>
-
-Projet Géoparc du Kef
-
-</h1>
-
-<p>
-
-Valoriser un patrimoine géologique exceptionnel,
-développer un tourisme durable
-et préparer la candidature
-UNESCO Global Geopark.
-
-</p>
-
-<a href="#map-section" class="hero-button">
-
-Découvrir la carte
-
-</a>
-
-</div>
-
-</section>
-
-<!-- ================= PRESENTATION ================= -->
-
-<section id="presentation" class="presentation">
-
-<h2>
-
-Bienvenue
-
-</h2>
-
-<p>
-
-Le Projet Géoparc du Kef vise à protéger,
-valoriser et faire connaître
-le patrimoine géologique,
-minier,
-naturel
-et culturel
-du Nord-Ouest tunisien.
-
-</p>
-
-<p>
-
-Le territoire possède une richesse scientifique remarquable :
-
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-🪨
-
-<h3>
-
-Géologie
-
-</h3>
-
-<p>
-
-Stratotypes,
-phosphates,
-fossiles,
-structures tectoniques
-et paysages.
-
-</p>
-
-</div>
-
-<div class="card">
-
-⛏️
-
-<h3>
-
-Patrimoine minier
-
-</h3>
-
-<p>
-
-Jerissa,
-Bou Jabeur,
-Sra Ouertane
-et l'histoire minière
-de la région.
-
-</p>
-
-</div>
-
-<div class="card">
-
-🥾
-
-<h3>
-
-Géotourisme
-
-</h3>
-
-<p>
-
-Circuits,
-randonnées,
-villages,
-musées
-et découverte.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= CARTE ================= -->
-
-<section id="map-section">
-
-<h2 class="titre-carte">
-
-Carte interactive
-
-</h2>
-
-<div id="map"></div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<p>
-
-© 2026 Projet Géoparc du Kef
-
-</p>
-
-<p>
-
-Vers un UNESCO Global Geopark
-
-</p>
-
-</footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<script src="script.js"></script>
-
+    <!-- BARRE DE NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <span>🌍</span> Projet Géoparc du Kef
+            </div>
+            <nav>
+                <a href="#accueil">Accueil</a>
+                <a href="#presentation">Présentation</a>
+                <a href="#carte-section">Carte</a>
+                <a href="#geosites">Géosites</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#carte-section" class="btn-action">Explorer la carte</a>
+        </div>
+    </header>
+
+    <!-- ZONE DE CONTENU PRINCIPAL -->
+    <main id="accueil">
+        
+        <!-- TEXTE DE PRÉSENTATION -->
+        <div id="presentation" class="intro-section">
+            <p>
+                Le Projet Géoparc du Kef vise à protéger, valoriser et faire connaître le patrimoine géologique, minier, naturel et culturel du Nord-Ouest tunisien.
+            </p>
+            <h2>Le territoire possède une richesse scientifique remarquable :</h2>
+        </div>
+
+        <!-- LES 3 BLOCS EN COLONNES -->
+        <div class="grid-blocs">
+            <div class="card">
+                <span class="icon">🏔️</span>
+                <h3>Géologie</h3>
+                <p>Stratotypes, phosphates, fossiles, structures tectoniques et paysages.</p>
+            </div>
+            <div class="card">
+                <span class="icon">🔨</span>
+                <h3>Patrimoine minier</h3>
+                <p>Jerissa, Bou Jabeur, Sra Ouertane et l'histoire minière de la région.</p>
+            </div>
+            <div class="card">
+                <span class="icon">⛺</span>
+                <h3>Géotourisme</h3>
+                <p>Circuits, randonnées, villages, musées et découverte.</p>
+            </div>
+        </div>
+
+        <!-- LA CARTE INTERACTIVE -->
+        <section id="carte-section" class="map-section">
+            <h2>📍 Carte interactive du patrimoine</h2>
+            <div id="map"></div>
+        </section>
+
+        <!-- SECTIONS RESTANTES -->
+        <section id="geosites" class="content-section">
+            <h2>Géosites</h2>
+            <p>Liste détaillée et fiches techniques des principaux géosites de la région du Kef.</p>
+        </section>
+        <section id="galerie" class="content-section">
+            <h2>Galerie</h2>
+            <p>Banque d'images illustrant la richesse géologique et culturelle du territoire.</p>
+        </section>
+        <section id="contact" class="content-section">
+            <h2>Contact</h2>
+            <p>Des questions sur le projet ? Contactez l'équipe d'administration du Géoparc.</p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Projet Géoparc du Kef</p>
+        <div class="subtitle">Objectif : Réseau mondial des UNESCO Global Geoparks</div>
+    </footer>
+
+    <!-- Liaison du fichier JavaScript externe (placé à la toute fin) -->
+    <script src="script.js"></script>
 </body>
-
-</html>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script src="script.js"></script>
-
-</body>
-
 </html>
