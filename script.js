@@ -26,3 +26,7 @@ L.marker([36.18,8.71])
 .bindPopup("<b>Le Kef</b><br>Projet Géoparc")
 
 .openPopup();
+
+setTimeout(() => {
+    map.invalidateSize();
+}, 300);
